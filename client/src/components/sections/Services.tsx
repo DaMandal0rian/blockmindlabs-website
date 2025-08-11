@@ -11,8 +11,8 @@ const ServiceVisual = ({ type }: { type: string }) => {
       <svg viewBox="0 0 400 300" className="w-full h-full">
         <defs>
           <linearGradient id="rpcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#1E40AF" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#00BFFF" stopOpacity="1" />
+            <stop offset="100%" stopColor="#0080FF" stopOpacity="0.8" />
           </linearGradient>
         </defs>
         <rect width="400" height="300" fill="#000" />
@@ -26,7 +26,7 @@ const ServiceVisual = ({ type }: { type: string }) => {
               width="40"
               height="60"
               fill="none"
-              stroke="#3B82F6"
+              stroke="#00BFFF"
               strokeWidth="2"
               opacity="0.8"
               rx="4"
@@ -34,10 +34,10 @@ const ServiceVisual = ({ type }: { type: string }) => {
               <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" begin={`${i * 0.3}s`} />
             </rect>
             {/* Server status lights */}
-            <circle cx={70 + i * 60} cy={140} r="2" fill="#10B981">
+            <circle cx={70 + i * 60} cy={140} r="2" fill="#00FF88">
               <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
             </circle>
-            <circle cx={70 + i * 60} cy={150} r="2" fill="#3B82F6">
+            <circle cx={70 + i * 60} cy={150} r="2" fill="#00BFFF">
               <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
             </circle>
           </g>
@@ -48,7 +48,7 @@ const ServiceVisual = ({ type }: { type: string }) => {
           <path
             key={i}
             d={`M ${70 + (i % 3) * 60} 80 Q 200 ${50 + i * 5} ${330 - (i % 3) * 60} 80`}
-            stroke="#3B82F6"
+            stroke="#00BFFF"
             strokeWidth="1"
             fill="none"
             opacity="0.4"
@@ -59,8 +59,8 @@ const ServiceVisual = ({ type }: { type: string }) => {
         ))}
         
         {/* Latency indicator */}
-        <text x="200" y="250" fill="#10B981" fontSize="12" textAnchor="middle" opacity="0.8">
-          &lt; 1ms latency
+        <text x="200" y="250" fill="#00FF88" fontSize="12" textAnchor="middle" opacity="0.8">
+          &lt; 100ms latency
         </text>
       </svg>
     );
@@ -71,17 +71,17 @@ const ServiceVisual = ({ type }: { type: string }) => {
       <svg viewBox="0 0 400 300" className="w-full h-full">
         <defs>
           <linearGradient id="gatewayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#10B981" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#065F46" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#00FF88" stopOpacity="1" />
+            <stop offset="100%" stopColor="#00CC66" stopOpacity="0.8" />
           </linearGradient>
         </defs>
         <rect width="400" height="300" fill="#000" />
         
         {/* Central gateway */}
-        <circle cx="200" cy="150" r="40" fill="none" stroke="#10B981" strokeWidth="3" opacity="0.8">
+        <circle cx="200" cy="150" r="40" fill="none" stroke="#00FF88" strokeWidth="3" opacity="0.8">
           <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite" />
         </circle>
-        <text x="200" y="155" fill="#10B981" fontSize="10" textAnchor="middle">Gateway</text>
+        <text x="200" y="155" fill="#00FF88" fontSize="10" textAnchor="middle">Gateway</text>
         
         {/* Incoming requests */}
         {Array.from({ length: 8 }, (_, i) => {
@@ -91,11 +91,11 @@ const ServiceVisual = ({ type }: { type: string }) => {
           
           return (
             <g key={i}>
-              <circle cx={x} cy={y} r="6" fill="#3B82F6" opacity="0.6">
+              <circle cx={x} cy={y} r="6" fill="#FF6B00" opacity="0.8">
                 <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin={`${i * 0.25}s`} />
               </circle>
               {/* Request flow lines */}
-              <line x1={x} y1={y} x2="200" y2="150" stroke="#10B981" strokeWidth="1" opacity="0.3">
+              <line x1={x} y1={y} x2="200" y2="150" stroke="#00FF88" strokeWidth="1" opacity="0.5">
                 <animate attributeName="stroke-opacity" values="0.1;0.6;0.1" dur="2s" repeatCount="indefinite" begin={`${i * 0.25}s`} />
               </line>
             </g>
@@ -105,7 +105,7 @@ const ServiceVisual = ({ type }: { type: string }) => {
         {/* Load balancing visualization */}
         <path
           d="M 100 250 Q 200 200 300 250"
-          stroke="#10B981"
+          stroke="#00FF88"
           strokeWidth="2"
           fill="none"
           strokeDasharray="8,4"
@@ -120,8 +120,8 @@ const ServiceVisual = ({ type }: { type: string }) => {
     <svg viewBox="0 0 400 300" className="w-full h-full">
       <defs>
         <linearGradient id="gpuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#EF4444" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="#991B1B" stopOpacity="0.4" />
+          <stop offset="0%" stopColor="#FF4466" stopOpacity="1" />
+          <stop offset="100%" stopColor="#FF0033" stopOpacity="0.8" />
         </linearGradient>
       </defs>
       <rect width="400" height="300" fill="#000" />
@@ -141,7 +141,7 @@ const ServiceVisual = ({ type }: { type: string }) => {
               width="50"
               height="30"
               fill="none"
-              stroke="#EF4444"
+              stroke="#FF4466"
               strokeWidth="2"
               opacity="0.8"
               rx="4"
@@ -156,7 +156,7 @@ const ServiceVisual = ({ type }: { type: string }) => {
                 y={y + 5 + Math.floor(j / 3) * 10}
                 width="8"
                 height="6"
-                fill="#EF4444"
+                fill="#FF4466"
                 opacity="0.6"
               >
                 <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1s" repeatCount="indefinite" begin={`${(i * 0.1 + j * 0.05)}s`} />
@@ -167,14 +167,14 @@ const ServiceVisual = ({ type }: { type: string }) => {
       })}
       
       {/* Performance indicator */}
-      <text x="200" y="250" fill="#EF4444" fontSize="12" textAnchor="middle" opacity="0.8">
+      <text x="200" y="250" fill="#FF4466" fontSize="12" textAnchor="middle" opacity="0.8">
         High-Performance Computing
       </text>
       
       {/* Connection lines between GPUs */}
       <path
         d="M 80 150 L 320 150"
-        stroke="#EF4444"
+        stroke="#FF4466"
         strokeWidth="1"
         opacity="0.4"
         strokeDasharray="4,4"
@@ -213,7 +213,7 @@ const detailedServices = [
     id: "rpc",
     title: "Low Latency RPC Services",
     icon: Zap,
-    description: "Enterprise-grade remote procedure call infrastructure designed for microsecond-level latency. Our optimized protocol implementations and global edge deployments ensure maximum throughput and minimal response times for mission-critical applications.",
+    description: "Enterprise-grade remote procedure call infrastructure designed for sub-100ms latency. Our optimized protocol implementations and global edge deployments ensure maximum throughput and minimal response times for mission-critical applications.",
     action: "View performance metrics"
   },
   {

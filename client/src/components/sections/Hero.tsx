@@ -181,7 +181,7 @@ export default function Hero() {
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
           >
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-light text-blue-400 mb-2">&lt;1ms</div>
+              <div className="text-2xl md:text-3xl font-light text-blue-400 mb-2">&lt;100ms</div>
               <div className="text-sm text-gray-400">RPC Latency</div>
             </div>
             <div className="text-center">

@@ -8,8 +8,8 @@ import Logo from "./Logo";
 const navItems = [
   { href: "#services", label: "Services" },
   { href: "#ai-products", label: "AI Products" },
-  { href: "#updates", label: "Updates" },
   { href: "#about", label: "About" },
+  { href: "#updates", label: "Updates" },
   { href: "#contact", label: "Contact" }
 ];
 
